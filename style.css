@@ -1,3 +1,38 @@
-.box:hover{
-    background: white;
+.my-btn {
+    background-color: #4CAF50; /* green */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
   }
+
+.btn:hover{
+    background: white;
+    transform: scale(1.05);
+  }
+  
+.btn:active {
+    background-color: #3e8e41;
+    transform: scale(0.95); /* shrink a bit */
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    background: rgba(255,255,255,0.5);
+    width: 100%;
+    height: 100%;
+    top: 0; left: -100%;
+    transition: left 0.3s;
+}
+
+.btn:hover::after {
+    left: 0;
+}
