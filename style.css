@@ -1,38 +1,103 @@
-.btn {
-    background-color: #4CAF50; /* green */
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-.btn:hover{
-    background: white;
-    transform: scale(1.05);
+:root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent: #7dd3fc;
+    --text: #e6eef8;
   }
   
-.btn:active {
-    background-color: #3e8e41;
-    transform: scale(0.95); /* shrink a bit */
-}
-
-.btn {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::after {
-    content: "";
-    position: absolute;
-    background: rgba(255,255,255,0.5);
-    width: 100%;
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
     height: 100%;
-    top: 0; left: -100%;
-    transition: left 0.3s;
-}
-
-.btn:hover::after {
-    left: 0;
-}
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #041025 0%, var(--bg) 100%);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .wrap {
+    width: 100%;
+    max-width: 420px; /* slightly narrower for mobile */
+    text-align: center;
+  }
+  
+  .avatar {
+    width: 120px; /* larger for visibility */
+    height: 120px;
+    border-radius: 20px;
+    margin: 0 auto 16px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  }
+  
+  h1 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: 1.5rem; /* bigger headline */
+    font-weight: 700;
+  }
+  
+  p.lead {
+    margin: 0 0 20px;
+    color: #9fb6d4;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 16px;
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 4px 12px rgba(2,6,23,0.5);
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    background: rgba(125, 211, 252, 0.1);
+  }
+  
+  .small {
+    font-size: 0.85rem;
+    color: #bcd9ee;
+  }
+  
+  footer {
+    margin-top: 24px;
+    color: #8ea8c7;
+    font-size: 0.8rem;
+  }
+  
+  /* Light mode */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --accent: #0ea5e9;
+      --text: #071428;
+    }
+    body {
+      background: linear-gradient(180deg, #eaf4ff 0%, var(--bg) 100%);
+    }
+  }
+  
