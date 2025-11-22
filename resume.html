@@ -6,23 +6,16 @@
   <title>Nathanael Hadgu — Links</title>
   <meta name="description" content="Links - social & contact" />
 
-  <style>
-    html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden; 
-    }
-    
-    .pdf-viewer {
-      width: 100vw; 
-      height: 100vh; 
-      border: none;  
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="wrap" aria-labelledby="name">
     <a class="btn" href="index.html">Home</a>
-    <embed src="Long_Resume.pdf" class="pdf-viewer-embed">
+    <iframe 
+    src="Long_Resume.pdf" 
+    class="pdf-viewer" 
+    title="Resume Viewer">
+      <p>Your browser doesn't support viewing PDFs directly. <a href="Long_Resume.pdf">Click here to download the file.</a></p>
+    </iframe>
+  </main>
 </body>
